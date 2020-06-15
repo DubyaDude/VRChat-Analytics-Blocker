@@ -1,0 +1,1 @@
+# VRChat-Analytics-Blocker

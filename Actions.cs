@@ -15,7 +15,7 @@ namespace VRChat_Analytics_Blocker
         //This endpoint is no longer up/used
         //"stats.unity3d.com"
 
-        private static string[] analyticsURLs = new string[]
+        private static readonly string[] analyticsURLs = new string[]
         {
             "api.amplitude.com", //This is VRChat specific
             "api.uca.cloud.unity3d.com",
@@ -26,15 +26,15 @@ namespace VRChat_Analytics_Blocker
             "data-optout-service.uca.cloud.unity3d.com"
         };
 
-        private static string HostsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/");
-        private static string HostsFile = Path.Combine(HostsFolder, "hosts");
+        private static readonly string HostsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/");
+        private static readonly string HostsFile = Path.Combine(HostsFolder, "hosts");
 
         public static void ModifyAnalyticsBlocking(bool isBlocking)
         {
             Output.WriteLine("====================================================================================");
             try
             {
-                List<string> hostsFile = getHostsFile();
+                List<string> hostsFile = GetHostsFile();
                 List<string> hostsFileEdited = new List<string>(hostsFile);
 
                 if (isBlocking)
@@ -42,7 +42,7 @@ namespace VRChat_Analytics_Blocker
                 else
                     UnblockAnalytics(hostsFile, ref hostsFileEdited);
 
-                saveHostsFile(hostsFileEdited);
+                SaveHostsFile(hostsFileEdited);
             }
             catch(Exception e)
             {
@@ -151,13 +151,13 @@ namespace VRChat_Analytics_Blocker
             }
         }
 
-        private static void saveHostsFile(List<string> lines)
+        private static void SaveHostsFile(List<string> lines)
         {
             File.WriteAllLines(HostsFile, lines);
             Output.WriteLine(ConsoleColor.Green, $"\nSaved 'hosts' file");
         }
 
-        private static List<string> getHostsFile()
+        private static List<string> GetHostsFile()
         {
             if (Directory.Exists(HostsFolder))
             {

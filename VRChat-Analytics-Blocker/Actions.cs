@@ -18,12 +18,14 @@ namespace VRChat_Analytics_Blocker
         private static readonly string[] analyticsURLs = new string[]
         {
             "api.amplitude.com", //This is VRChat specific
+            "api2.amplitude.com", //This is VRChat specific
             "api.uca.cloud.unity3d.com",
             "config.uca.cloud.unity3d.com",
             "perf-events.cloud.unity3d.com",
             "public.cloud.unity3d.com",
             "cdp.cloud.unity3d.com",
-            "data-optout-service.uca.cloud.unity3d.com"
+            "data-optout-service.uca.cloud.unity3d.com",
+            "ecommerce.iap.unity3d.com"
         };
 
         private static readonly string HostsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/");
@@ -62,7 +64,7 @@ namespace VRChat_Analytics_Blocker
                     var ip = Dns.GetHostAddresses(uri.Host)[0];
                     isBlocked = ip.ToString() == "0.0.0.0";
                 }
-                catch (Exception e)
+                catch /*(Exception e)*/
                 {
                     //If throws exception, is down
                 }

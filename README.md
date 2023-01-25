@@ -5,7 +5,7 @@ It goes into your hosts file and modifies it so that any website/endpoint that i
 __In Layman Terms:__ It makes it so the sites that collect any sort of statistical data cannot be reached.
 
 
-Data collection is something users should have the ability deny. This tool will help with some aspects of that for VRChat.
+Data collection is something users should have the ability to deny. This tool will help with some aspects of that for VRChat.
 
 # I don't trust the EXE file!
 

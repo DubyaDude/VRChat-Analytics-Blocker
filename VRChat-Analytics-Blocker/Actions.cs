@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VRChat_Analytics_Blocker
 {
@@ -46,7 +43,7 @@ namespace VRChat_Analytics_Blocker
 
                 SaveHostsFile(hostsFileEdited);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Output.WriteLine($"There was an Error!\n{e}");
             }
@@ -68,7 +65,7 @@ namespace VRChat_Analytics_Blocker
                 {
                     //If throws exception, is down
                 }
-                finally 
+                finally
                 {
                     Output.WriteLine($"{url} : {(isBlocked ? "Down" : "Up")}");
                     if (!isBlocked)
@@ -76,9 +73,9 @@ namespace VRChat_Analytics_Blocker
                 }
             }
 
-            if(isBlocking)
+            if (isBlocking)
             {
-                if(amountUp == 0)
+                if (amountUp == 0)
                 {
                     Output.WriteLine(ConsoleColor.Green, $"\nBlocking Analytics Successful!");
                 }
@@ -93,7 +90,7 @@ namespace VRChat_Analytics_Blocker
                 {
                     Output.WriteLine(ConsoleColor.Green, $"\nUnblocking Analytics Successful!");
                 }
-                else if(amountUp < analyticsURLs.Length)
+                else if (amountUp < analyticsURLs.Length)
                 {
                     Output.WriteLine(ConsoleColor.Red, $"\nUnblocking Analytics partially FAILED!");
                 }
@@ -141,7 +138,7 @@ namespace VRChat_Analytics_Blocker
         {
             foreach (string line in hostsFile)
             {
-                foreach(string url in analyticsURLs)
+                foreach (string url in analyticsURLs)
                 {
                     if (line.Contains(url))
                     {

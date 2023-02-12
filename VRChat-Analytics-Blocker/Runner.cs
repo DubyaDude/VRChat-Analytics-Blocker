@@ -1,11 +1,4 @@
-﻿using EasyConsole;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VRChat_Analytics_Blocker
+﻿namespace VRChat_Analytics_Blocker
 {
     class Runner
     {

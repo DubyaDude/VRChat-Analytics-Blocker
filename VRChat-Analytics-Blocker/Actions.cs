@@ -14,8 +14,16 @@ namespace VRChat_Analytics_Blocker
 
         private static readonly string[] analyticsURLs = new string[]
         {
-            "api.amplitude.com", //This is VRChat specific
-            "api2.amplitude.com", //This is VRChat specific
+            // VRChat Specific (Proven to use/have used)
+            "api.amplitude.com",
+            "api2.amplitude.com",
+            "api.lab.amplitude.com",
+
+            // VRChat Specific (Hasn't used yet, added for future proofing)
+            "api3.amplitude.com",
+            "api.eu.amplitude.com",
+
+            // Unity Specific
             "api.uca.cloud.unity3d.com",
             "config.uca.cloud.unity3d.com",
             "perf-events.cloud.unity3d.com",

@@ -9,30 +9,6 @@ namespace VRChat_Analytics_Blocker
 {
     public static class Actions
     {
-        private static readonly string[] analyticsURLs = new string[]
-        {
-            // VRChat Specific (Proven to use/have used)
-            "api.amplitude.com",
-            "api2.amplitude.com",
-            "api.lab.amplitude.com",
-
-            // VRChat Specific (Hasn't used yet, added for future proofing)
-            "api3.amplitude.com",
-            "api.eu.amplitude.com",
-
-            // Unity Specific
-            "api.uca.cloud.unity3d.com",
-            "config.uca.cloud.unity3d.com",
-            "perf-events.cloud.unity3d.com",
-            "public.cloud.unity3d.com",
-            "cdp.cloud.unity3d.com",
-            "data-optout-service.uca.cloud.unity3d.com",
-            "ecommerce.iap.unity3d.com",
-            
-            // No longer up
-            // "stats.unity3d.com",
-        };
-
         private static readonly string HostsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/");
         private static readonly string HostsFile = Path.Combine(HostsFolder, "hosts");
 
@@ -60,7 +36,7 @@ namespace VRChat_Analytics_Blocker
             Output.WriteLine($"Checking Urls...\n");
 
             int amountUp = 0;
-            foreach (string url in analyticsURLs)
+            foreach (string url in Constants.AnalyticsURLs)
             {
                 bool isBlocked = true;
                 try
@@ -94,11 +70,11 @@ namespace VRChat_Analytics_Blocker
             }
             else
             {
-                if (amountUp == analyticsURLs.Length)
+                if (amountUp == Constants.AnalyticsURLs.Length)
                 {
                     Output.WriteLine(ConsoleColor.Green, $"\nUnblocking Analytics Successful!");
                 }
-                else if (amountUp < analyticsURLs.Length)
+                else if (amountUp < Constants.AnalyticsURLs.Length)
                 {
                     Output.WriteLine(ConsoleColor.Red, $"\nUnblocking Analytics partially FAILED!");
                 }
@@ -117,7 +93,7 @@ namespace VRChat_Analytics_Blocker
 
         public static void BlockAnalytics(List<string> hostsFile, ref List<string> hostsFileEdited)
         {
-            foreach (string url in analyticsURLs)
+            foreach (string url in Constants.AnalyticsURLs)
             {
                 bool alreadyExists = false;
 
@@ -146,7 +122,7 @@ namespace VRChat_Analytics_Blocker
         {
             foreach (string line in hostsFile)
             {
-                foreach (string url in analyticsURLs)
+                foreach (string url in Constants.AnalyticsURLs)
                 {
                     if (line.Contains(url))
                     {

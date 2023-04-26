@@ -19,6 +19,9 @@ That's fine. Here's what it basically does so you can do it yourself:
 ```
 0.0.0.0 api.amplitude.com
 0.0.0.0 api2.amplitude.com
+0.0.0.0 api.lab.amplitude.com
+0.0.0.0 api3.amplitude.com
+0.0.0.0 api.eu.amplitude.com
 0.0.0.0 api.uca.cloud.unity3d.com
 0.0.0.0 config.uca.cloud.unity3d.com
 0.0.0.0 perf-events.cloud.unity3d.com

@@ -9,9 +9,6 @@ namespace VRChat_Analytics_Blocker
 {
     public static class Actions
     {
-        //This endpoint is no longer up/used
-        //"stats.unity3d.com"
-
         private static readonly string[] analyticsURLs = new string[]
         {
             // VRChat Specific (Proven to use/have used)
@@ -30,7 +27,10 @@ namespace VRChat_Analytics_Blocker
             "public.cloud.unity3d.com",
             "cdp.cloud.unity3d.com",
             "data-optout-service.uca.cloud.unity3d.com",
-            "ecommerce.iap.unity3d.com"
+            "ecommerce.iap.unity3d.com",
+            
+            // No longer up
+            // "stats.unity3d.com",
         };
 
         private static readonly string HostsFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "drivers/etc/");

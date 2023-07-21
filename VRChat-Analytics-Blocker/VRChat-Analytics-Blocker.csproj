@@ -85,7 +85,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

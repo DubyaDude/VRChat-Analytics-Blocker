@@ -17,6 +17,9 @@
 
             // VRChat Specific (Hasn't used yet, added for future proofing)
             "api3.amplitude.com",
+            "cdn.amplitude.com",
+            "info.amplitude.com",
+            "static.amplitude.com",
 
             // Unity Specific
             "api.uca.cloud.unity3d.com",

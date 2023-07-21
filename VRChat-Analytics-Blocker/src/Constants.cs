@@ -10,10 +10,13 @@
             "api.amplitude.com",
             "api2.amplitude.com",
             "api.lab.amplitude.com",
+            "api.eu.amplitude.com",
+            "regionconfig.amplitude.com",
+            "regionconfig.eu.amplitude.com",
+            "o1125869.ingest.sentry.io",
 
             // VRChat Specific (Hasn't used yet, added for future proofing)
             "api3.amplitude.com",
-            "api.eu.amplitude.com",
 
             // Unity Specific
             "api.uca.cloud.unity3d.com",

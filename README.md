@@ -21,4 +21,5 @@ https://raw.githubusercontent.com/DubyaDude/VRChat-Analytics-Blocker/refs/heads/
 ```
 
 ## How to fix VRChat's SDK after blocking analytics
-WIP
+You may run into errors in the VRChat SDK while analytics are blocked.
+- Import [this unity package](https://github.com/DubyaDude/VRChat-Analytics-Blocker/raw/refs/heads/master/unity/NoVrcAnalytics.unitypackage) into your project
